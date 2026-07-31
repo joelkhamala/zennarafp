@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | ZENNARA - Professional Property & Facility Management</title>
+    <meta name="description" content="ZENNARA LTD - Professional property and facility management coming soon to East Africa. Guaranteed rent, transparent reporting, and disciplined property operations.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logos/ZENNARA_ZPrism_Icon.svg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --zenara-white: #FFFFFF;
+            --zenara-off-white: #F6F5F1;
+            --zenara-text-dark: #1A1A1A;
+            --zenara-grey: #6B6B6B;
+            --zenara-light-grey: #F5F5F5;
+            --zenara-gold: #B8860B;
+            --zenara-gold-light: #D4AF37;
+            --zenara-eco: #2D7A4F;
+            --zenara-eco-light: #3BAA6A;
+            --zenara-border: #E0E0E0;
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-labels: 'Barlow Condensed', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--zenara-white);
+            color: var(--zenara-text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Background Glow Effects */
+        .coming-soon-wrapper {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+        
+        .glow-gold {
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse at center, rgba(184, 134, 11, 0.15), transparent 70%);
+            pointer-events: none;
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        .glow-eco {
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 350px;
+            background: radial-gradient(ellipse at center, rgba(45, 122, 79, 0.12), transparent 70%);
+            pointer-events: none;
+            animation: pulse 10s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Main Container */
+        .coming-soon-container {
+            position: relative;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        /* Logo */
+        .cs-logo {
+            margin-bottom: 48px;
+        }
+        
+        .logo-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-main {
+            font-family: var(--font-labels);
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--zenara-text-dark);
+            line-height: 1;
+        }
+        
+        .logo-subtitle {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--zenara-grey);
+        }
+        
+        /* Badge */
+        .cs-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--zenara-light-grey);
+            border: 1px solid var(--zenara-border);
+            border-radius: 100px;
+            font-family: var(--font-labels);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--zenara-eco);
+            margin-bottom: 32px;
+        }
+        
+        /* Heading */
+        .cs-heading {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--zenara-text-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .cs-heading em {
+            font-style: italic;
+            color: var(--zenara-gold);
+        }
+        
+        .cs-heading .eco {
+            color: var(--zenara-eco);
+        }
+        
+        /* Description */
+        .cs-description {
+            font-size: 16px;
+            color: var(--zenara-grey);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Email Form */
+        .cs-notify-form {
+            max-width: 500px;
+            margin: 0 auto 48px;
+        }
+        
+        .form-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .form-group input {
+            flex: 1;
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            border: 1px solid var(--zenara-border);
+            border-radius: 4px;
+            background: var(--zenara-white);
+            color: var(--zenara-text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--zenara-gold);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+        
+        .form-group input::placeholder {
+            color: #999;
+        }
+        
+        .btn-notify {
+            padding: 16px 32px;
+            background: var(--zenara-gold);
+            color: var(--zenara-text-dark);
+            font-family: var(--font-labels);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .btn-notify:hover {
+            background: var(--zenara-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
+        }
+        
+        .form-privacy {
+            font-size: 12px;
+            color: var(--zenara-grey);
+            line-height: 1.5;
+        }
+        
+        .form-message {
+            margin-top: 16px;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .form-message.success {
+            display: block;
+            background: rgba(45, 122, 79, 0.1);
+            border: 1px solid var(--zenara-eco);
+            color: var(--zenara-eco);
+        }
+        
+        .form-message.error {
+            display: block;
+            background: rgba(220, 53, 69, 0.1);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+        }
+        
+        /* Features */
+        .cs-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+            padding: 0 20px;
+        }
+        
+        .cs-feature {
+            text-align: center;
+        }
+        
+        .cs-feature-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--zenara-light-grey);
+            border-radius: 50%;
+            color: var(--zenara-gold);
+        }
+        
+        .cs-feature-icon.eco {
+            color: var(--zenara-eco);
+        }
+        
+        .cs-feature h3 {
+            font-family: var(--font-labels);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--zenara-text-dark);
+            margin-bottom: 8px;
+        }
+        
+        .cs-feature p {
+            font-size: 14px;
+            color: var(--zenara-grey);
+            line-height: 1.6;
+        }
+        
+        /* Contact */
+        .cs-contact {
+            padding: 32px;
+            background: var(--zenara-light-grey);
+            border: 1px solid var(--zenara-border);
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .cs-contact h3 {
+            font-family: var(--font-labels);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--zenara-text-dark);
+            margin-bottom: 16px;
+        }
+        
+        .cs-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            text-align: left;
+        }
+        
+        .cs-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .cs-contact-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--zenara-white);
+            border-radius: 50%;
+            color: var(--zenara-gold);
+            flex-shrink: 0;
+        }
+        
+        .cs-contact-details {
+            flex: 1;
+        }
+        
+        .cs-contact-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--zenara-grey);
+            margin-bottom: 4px;
+        }
+        
+        .cs-contact-value {
+            font-size: 14px;
+            color: var(--zenara-text-dark);
+        }
+        
+        .cs-contact-value a {
+            color: var(--zenara-text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .cs-contact-value a:hover {
+            color: var(--zenara-gold);
+        }
+        
+        /* Footer */
+        .cs-footer {
+            padding-top: 32px;
+            border-top: 1px solid var(--zenara-border);
+            font-size: 13px;
+            color: var(--zenara-grey);
+        }
+        
+        .cs-footer-badge {
+            font-size: 11px;
+            color: var(--zenara-grey);
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-main {
+                font-size: 42px;
+            }
+            
+            .cs-heading {
+                font-size: 36px;
+            }
+            
+            .form-group {
+                flex-direction: column;
+            }
+            
+            .cs-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cs-contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-main {
+                font-size: 36px;
+            }
+            
+            .cs-heading {
+                font-size: 28px;
+            }
+            
+            .cs-description {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="coming-soon-wrapper">
+        <div class="glow-gold"></div>
+        <div class="glow-eco"></div>
+        
+        <div class="coming-soon-container">
+            <!-- Logo -->
+            <div class="cs-logo">
+                <div class="logo-stack">
+                    <div class="logo-main">ZENNARA F&P</div>
+                    <div class="logo-subtitle">Property & Facility Management</div>
+                </div>
+            </div>
+            
+            <!-- Badge -->
+            <div class="cs-badge">Coming Soon</div>
+            
+            <!-- Heading -->
+            <h1 class="cs-heading">
+                Professional Property Management<br>
+                Across <em class="eco">East Africa</em>
+            </h1>
+            
+            <!-- Description -->
+            <p class="cs-description">
+                ZENNARA LTD is launching comprehensive property and facility management services 
+                across Kenya, Uganda, Tanzania, and Rwanda. Experience guaranteed rent with our 
+                SecureRent Programme, transparent reporting, and disciplined property operations.
+            </p>
+            
+            <!-- Notify Form -->
+            <div class="cs-notify-form">
+                <form id="notifyForm">
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="notifyEmail" 
+                            name="email" 
+                            placeholder="Enter your email address" 
+                            required
+                        >
+                        <button type="submit" class="btn-notify">Notify Me</button>
+                    </div>
+                    <p class="form-privacy">
+                        Be the first to know when we launch. We respect your privacy.
+                    </p>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+            
+            <!-- Features -->
+            <div class="cs-features">
+                <div class="cs-feature">
+                    <div class="cs-feature-icon eco">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>SecureRent</h3>
+                    <p>Guaranteed rent by the 15th of every month</p>
+                </div>
+                
+                <div class="cs-feature">
+                    <div class="cs-feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" opacity="0.3"/>
+                            <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Property Management</h3>
+                    <p>Comprehensive residential & commercial management</p>
+                </div>
+                
+                <div class="cs-feature">
+                    <div class="cs-feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Facility Management</h3>
+                    <p>Hard & soft FM services with preventive maintenance</p>
+                </div>
+            </div>
+            
+            <!-- Contact -->
+            <div class="cs-contact">
+                <h3>Get in Touch</h3>
+                <div class="cs-contact-grid">
+                    <div class="cs-contact-item">
+                        <div class="cs-contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 8L10.89 13.26C11.54 13.67 12.46 13.67 13.11 13.26L21 8M5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="cs-contact-details">
+                            <div class="cs-contact-label">Email</div>
+                            <div class="cs-contact-value">
+                                <a href="mailto:info@zennarafp.com">info@zennarafp.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cs-contact-item">
+                        <div class="cs-contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="cs-contact-details">
+                            <div class="cs-contact-label">Phone</div>
+                            <div class="cs-contact-value">
+                                <a href="tel:+254789115737">+254 789 115737</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cs-contact-item">
+                        <div class="cs-contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                            </svg>
+                        </div>
+                        <div class="cs-contact-details">
+                            <div class="cs-contact-label">WhatsApp</div>
+                            <div class="cs-contact-value">
+                                <a href="https://wa.me/254789115737" target="_blank">+254 789 115737</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="cs-footer">
+                <p>&copy; 2026 ZENNARA LTD. All rights reserved. | Registered in Kenya</p>
+                <p class="cs-footer-badge">
+                    Property & Facility Management Only — No Sales · No Brokerage · No Lettings
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Form Handling
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = document.getElementById('notifyEmail');
+            const formMessage = document.getElementById('formMessage');
+            const email = emailInput.value.trim();
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Please enter a valid email address.';
+                return;
+            }
+            
+            // Show success message (In production, this would send to backend)
+            formMessage.className = 'form-message success';
+            formMessage.textContent = 'Thank you! We\'ll notify you when we launch.';
+            
+            // Clear form
+            emailInput.value = '';
+            
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                formMessage.className = 'form-message';
+                formMessage.textContent = '';
+            }, 5000);
+            
+            // TODO: Send email to backend API
+            // Example:
+            // fetch('/api/notify', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email: email })
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     formMessage.className = 'form-message success';
+            //     formMessage.textContent = 'Thank you! We\'ll notify you when we launch.';
+            // })
+            // .catch(error => {
+            //     formMessage.className = 'form-message error';
+            //     formMessage.textContent = 'Something went wrong. Please try again.';
+            // });
+        });
+    </script>
+    
+</body>
+</html>

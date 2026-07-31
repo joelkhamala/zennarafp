@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal Login | ZENNARA Property Management</title>
+    <meta name="description" content="Access your ZENNARA client portal to view financial statements, property documents, maintenance requests, and real-time portfolio data.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/zenara-custom.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logos/ZENNARA_ZPrism_Icon.svg">
+</head>
+
+<body class="zenara-dark">
+    
+    <!-- Preloader -->
+    <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+    
+    <!-- Main wrapper -->
+    <div id="main-wrapper">
+        
+        <!-- Navigation -->
+        <header class="zenara-header">
+            <div class="container">
+                <nav class="zenara-nav">
+                    <div class="nav-logo">
+                        <a href="zenara-index.html">
+                            <img src="logos/ZENNARA_ZPrism_Horizontal_Light.svg" alt="ZENNARA" height="40">
+                            <div class="logo-text">
+                                <span class="zen-fp">ZEN F&P</span>
+                                <span class="descriptor">Property & Facility Management</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="nav-toggle" id="navToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="zenara-index.html">Home</a></li>
+                        <li><a href="zenara-securerent.html">SecureRent</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#">Services <span class="dropdown-arrow">▾</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="zenara-property-management.html">Property Management</a></li>
+                                <li><a href="zenara-facility-management.html">Facility Management</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="zenara-about.html">About</a></li>
+                        <li><a href="zenara-insights.html">Insights</a></li>
+                        <li><a href="zenara-contact.html">Contact</a></li>
+                        <li class="portal-link"><a href="zenara-portal.html" class="active">Client Portal</a></li>
+                    </ul>
+                    
+                    <div class="nav-cta">
+                        <a href="zenara-contact.html" class="btn-zenara-primary">Request Proposal</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Portal Login Section -->
+        <section class="zenara-portal-login">
+            <div class="container">
+                <div class="portal-grid">
+                    <!-- Login Form -->
+                    <div class="portal-login-card">
+                        <div class="portal-header">
+                            <h1>Client Portal</h1>
+                            <p>Access your property management dashboard</p>
+                        </div>
+                        
+                        <form id="portalLoginForm" class="portal-form">
+                            <div class="form-group">
+                                <label for="portalEmail">Email Address</label>
+                                <input type="email" id="portalEmail" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="portalPassword">Password</label>
+                                <input type="password" id="portalPassword" name="password" placeholder="Enter your password" required>
+                            </div>
+                            
+                            <div class="form-options">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                                    <label for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-password-link">Forgot password?</a>
+                            </div>
+                            
+                            <button type="submit" class="btn-zenara-primary btn-lg btn-full-width">Sign In</button>
+                            
+                            <div class="portal-divider">
+                                <span>or</span>
+                            </div>
+                            
+                            <div class="portal-help">
+                                <p>Don't have access yet?</p>
+                                <a href="zenara-contact.html" class="btn-zenara-secondary btn-lg btn-full-width">Contact Us for Access</a>
+                            </div>
+                        </form>
+                        
+                        <div class="portal-security">
+                            <div class="security-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" fill="currentColor" opacity="0.3"/>
+                                    <path d="M10 12L9 13L11 15L15 11L14 10L11 13L10 12Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <p>Your data is protected with 256-bit SSL encryption</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Portal Features -->
+                    <div class="portal-features-card">
+                        <h2>Portal Features</h2>
+                        <p class="features-intro">
+                            Access comprehensive property management tools and real-time data from anywhere.
+                        </p>
+                        
+                        <div class="portal-features-list">
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="currentColor" opacity="0.3"/>
+                                        <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Financial Statements</h4>
+                                    <p>View and download monthly statements and annual reports</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Maintenance Requests</h4>
+                                    <p>Submit and track property maintenance requests</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 10L12 5L17 10M12 5V19" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Property Documents</h4>
+                                    <p>Access leases, inspection reports, and certificates</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 6H4C2.9 6 2 6.9 2 8V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6Z" fill="currentColor" opacity="0.3"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Payment Tracking</h4>
+                                    <p>Monitor rent payments and transaction history</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" fill="currentColor" opacity="0.3"/>
+                                        <path d="M12 14C7.03 14 3 16.69 3 20V22H21V20C21 16.69 16.97 14 12 14Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Tenant Information</h4>
+                                    <p>View tenant details and lease information</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" opacity="0.3"/>
+                                        <path d="M7 12H17M12 7V17" stroke="white" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Owner Requests</h4>
+                                    <p>Submit inquiries and requests to your property manager</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 13L7 9L11 13L21 3" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M21 3V9H15" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Portfolio Dashboard</h4>
+                                    <p>Real-time overview of all your managed properties</p>
+                                </div>
+                            </div>
+                            
+                            <div class="portal-feature-item">
+                                <div class="feature-icon eco-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>SecureRent Status</h4>
+                                    <p>Track guaranteed payments and programme status</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Coming Soon Notice -->
+        <section class="zenara-coming-soon">
+            <div class="container">
+                <div class="coming-soon-card">
+                    <div class="coming-soon-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h2>Full Portal Coming Soon</h2>
+                    <p>
+                        We're building a comprehensive client portal with real-time data access, document management, 
+                        and maintenance tracking. The full portal will launch in Q2 2026.
+                    </p>
+                    <p>
+                        Current ZENNARA clients receive detailed monthly reports via email. For immediate access to 
+                        your property information, please contact your property manager.
+                    </p>
+                    <div class="coming-soon-actions">
+                        <a href="zenara-contact.html" class="btn-zenara-primary btn-lg">Contact Your Manager</a>
+                        <a href="mailto:info@zennarafp.com" class="btn-zenara-secondary btn-lg">Email Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Security & Privacy -->
+        <section class="zenara-security-info">
+            <div class="container">
+                <div class="security-grid">
+                    <div class="security-card">
+                        <div class="security-badge">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>256-bit SSL Encryption</h3>
+                        <p>All data transmission is protected with bank-grade encryption</p>
+                    </div>
+                    
+                    <div class="security-card">
+                        <div class="security-badge">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5" y="11" width="14" height="10" rx="2" fill="currentColor" opacity="0.3"/>
+                                <path d="M7 11V7C7 4.79086 8.79086 3 11 3H13C15.2091 3 17 4.79086 17 7V11" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Secure Access Control</h3>
+                        <p>Multi-factor authentication and role-based permissions</p>
+                    </div>
+                    
+                    <div class="security-card">
+                        <div class="security-badge eco-badge">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Data Privacy</h3>
+                        <p>Full compliance with East African data protection regulations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Help & Support -->
+        <section class="zenara-portal-help">
+            <div class="container">
+                <div class="help-card">
+                    <h2>Need Help?</h2>
+                    <p>Our support team is available to assist with portal access and technical questions.</p>
+                    <div class="help-contact-options">
+                        <div class="help-contact-item">
+                            <div class="help-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8L10.89 13.26C11.54 13.67 12.46 13.67 13.11 13.26L21 8M5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Email Support</strong>
+                                <p><a href="mailto:info@zennarafp.com">info@zennarafp.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="help-contact-item">
+                            <div class="help-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Phone Support</strong>
+                                <p><a href="tel:+254789115737">+254 789 115737</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="help-contact-item">
+                            <div class="help-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <p><a href="https://wa.me/254789115737" target="_blank">+254 789 115737</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="help-hours">Support available Monday - Friday, 8:00 AM - 6:00 PM EAT</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="zenara-footer">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-col footer-col-logo">
+                        <div class="footer-logo">
+                            <img src="logos/ZENNARA_ZPrism_Horizontal_Dark.svg" alt="ZENNARA" height="50">
+                            <div class="logo-text">
+                                <span class="zen-fp">ZEN F&P</span>
+                                <span class="descriptor">Property & Facility Management</span>
+                            </div>
+                        </div>
+                        <p class="footer-tagline">
+                            Professional property and facility management across East Africa.
+                        </p>
+                        <div class="footer-coverage">
+                            Kenya · Uganda · Tanzania · Rwanda
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="zenara-property-management.html">Property Management</a></li>
+                            <li><a href="zenara-securerent.html">SecureRent Programme</a></li>
+                            <li><a href="zenara-facility-management.html">Facility Management</a></li>
+                            <li><a href="zenara-portal.html">Client Portal</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="zenara-about.html">About ZENNARA</a></li>
+                            <li><a href="zenara-insights.html">Insights & Updates</a></li>
+                            <li><a href="zenara-contact.html">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4 class="footer-title">Contact</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:info@zennarafp.com">info@zennarafp.com</a>
+                            </li>
+                            <li>
+                                <strong>Phone/WhatsApp:</strong><br>
+                                <a href="tel:+254789115737">+254 789 115737</a>
+                            </li>
+                            <li>
+                                <strong>Office:</strong><br>
+                                Nairobi, Kenya
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <div class="footer-legal">
+                            <p>&copy; 2026 ZENNARA LTD. All rights reserved. | Registered in Kenya</p>
+                            <div class="footer-legal-links">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Service</a>
+                                <a href="#">Data Protection</a>
+                            </div>
+                        </div>
+                        <div class="footer-badge">
+                            Property & Facility Management Only — No Sales · No Brokerage · No Lettings
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/zenara-custom.js"></script>
+    
+</body>
+</html>
