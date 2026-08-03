@@ -41,9 +41,9 @@
     --zenara-card-bg: #FFFFFF;
     
     /* Typography */
-    --font-display: 'Cormorant Garamond', serif;
-    --font-condensed: 'Barlow Condensed', sans-serif;
-    --font-body: 'Barlow', sans-serif;
+    --font-display: 'Jost', sans-serif;
+    --font-condensed: 'Jost', sans-serif;
+    --font-body: 'Jost', sans-serif;
     
     /* Spacing */
     --section-padding: 88px;
