@@ -14,6 +14,282 @@
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/zenara-custom.css" rel="stylesheet">
     
+    <!-- Responsive Inline Styles -->
+    <style>
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 24px !important;
+                max-width: 100% !important;
+            }
+            
+            .nav-menu {
+                gap: 20px;
+                font-size: 14px;
+            }
+            
+            .nav-cta .btn-zenara-primary {
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+            
+            .portal-grid {
+                gap: 40px !important;
+            }
+            
+            .portal-features-list {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .security-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Navbar Responsive */
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 0;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid #E0E3E7;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                margin: 0;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                display: flex !important;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+                border-bottom: 1px solid #E0E3E7;
+            }
+            
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-menu a {
+                padding: 16px 8px;
+                justify-content: space-between;
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: flex !important;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 8px;
+                background: transparent;
+                border: none;
+                z-index: 1001;
+                margin-left: auto;
+            }
+            
+            .nav-toggle span {
+                width: 24px;
+                height: 2.5px;
+                background-color: #B8860B;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(7px, 7px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .nav-cta {
+                display: none !important;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #E0E3E7;
+                border-radius: 0;
+                padding: 0;
+                margin-top: 0;
+                background: #F8F9FA;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+            
+            .nav-dropdown:hover .dropdown-menu {
+                display: none;
+            }
+            
+            .dropdown-menu.show {
+                display: block !important;
+            }
+            
+            .dropdown-menu a {
+                padding: 12px 16px;
+            }
+            
+            /* Portal Grid - Stack on mobile */
+            .portal-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            
+            .portal-features-card {
+                order: 2 !important;
+            }
+            
+            .portal-login-card {
+                order: 1 !important;
+            }
+            
+            .portal-features-list {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Coming Soon Actions */
+            .coming-soon-actions {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+            
+            .coming-soon-actions a {
+                width: 100% !important;
+            }
+            
+            /* Security Grid - 1 column */
+            .security-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* Help Contact Options */
+            .help-contact-options {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            section {
+                padding: 50px 0 !important;
+            }
+            
+            h1 {
+                font-size: 32px !important;
+            }
+            
+            h2 {
+                font-size: 28px !important;
+            }
+        }
+        
+        @media (max-width: 992px) and (min-width: 769px) {
+            .nav-toggle {
+                display: flex !important;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 8px;
+                background: transparent;
+                border: none;
+                z-index: 1001;
+                margin-left: auto;
+            }
+            
+            .nav-toggle span {
+                width: 24px;
+                height: 2.5px;
+                background-color: #B8860B;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex !important;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                z-index: 999;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid #E0E3E7;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active li {
+                width: 100%;
+                border-bottom: 1px solid #E0E3E7;
+            }
+            
+            .nav-menu.active a {
+                padding: 16px 8px;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .nav-cta {
+                display: none !important;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #E0E3E7;
+                border-radius: 0;
+                padding: 0;
+                margin-top: 0;
+                background: #F8F9FA;
+                display: none;
+            }
+            
+            .dropdown-menu.show {
+                display: block !important;
+            }
+            
+            .dropdown-menu a {
+                padding: 12px 16px;
+            }
+            
+            /* Portal Grid - Stack on tablet */
+            .portal-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Security Grid - 3 columns */
+            .security-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+    </style>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="logos/ZENNARA_ZPrism_Icon.svg">
 </head>
@@ -70,164 +346,167 @@
         </header>
         
         <!-- Portal Login Section -->
-        <section class="zenara-portal-login">
-            <div class="container">
-                <div class="portal-grid">
+        <section class="zenara-portal-login" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D3748 100%); padding: 100px 0 80px; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center;">
+            <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(184, 134, 11, 0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -120px; left: -120px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(45, 122, 79, 0.12) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1;">
+                <div class="portal-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
                     <!-- Login Form -->
-                    <div class="portal-login-card">
-                        <div class="portal-header">
-                            <h1>Client Portal</h1>
-                            <p>Access your property management dashboard</p>
+                    <div class="portal-login-card" style="background: white; padding: 48px; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+                        <div class="portal-header" style="text-align: center; margin-bottom: 36px;">
+                            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 600; color: #1A1A1A; margin-bottom: 12px;">Client Portal</h1>
+                            <p style="font-family: 'Barlow', sans-serif; font-size: 15px; color: #4A5568; margin: 0;">Access your property management dashboard</p>
                         </div>
                         
-                        <form id="portalLoginForm" class="portal-form">
+                        <form id="portalLoginForm" class="portal-form" style="display: flex; flex-direction: column; gap: 24px;">
                             <div class="form-group">
-                                <label for="portalEmail">Email Address</label>
-                                <input type="email" id="portalEmail" name="email" placeholder="your.email@example.com" required>
+                                <label for="portalEmail" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5568; margin-bottom: 8px;">Email Address</label>
+                                <input type="email" id="portalEmail" name="email" placeholder="your.email@example.com" required style="width: 100%; padding: 14px 16px; border: 2px solid #E0E3E7; border-radius: 8px; font-family: 'Barlow', sans-serif; font-size: 14px; transition: all 0.3s ease; background: white;">
                             </div>
                             
                             <div class="form-group">
-                                <label for="portalPassword">Password</label>
-                                <input type="password" id="portalPassword" name="password" placeholder="Enter your password" required>
+                                <label for="portalPassword" style="display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #4A5568; margin-bottom: 8px;">Password</label>
+                                <input type="password" id="portalPassword" name="password" placeholder="Enter your password" required style="width: 100%; padding: 14px 16px; border: 2px solid #E0E3E7; border-radius: 8px; font-family: 'Barlow', sans-serif; font-size: 14px; transition: all 0.3s ease; background: white;">
                             </div>
                             
-                            <div class="form-options">
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="rememberMe" name="rememberMe">
-                                    <label for="rememberMe">Remember me</label>
+                            <div class="form-options" style="display: flex; align-items: center; justify-content: space-between; margin-top: -8px;">
+                                <div class="form-checkbox" style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe" style="width: 16px; height: 16px; cursor: pointer;">
+                                    <label for="rememberMe" style="font-family: 'Barlow', sans-serif; font-size: 13px; color: #4A5568; cursor: pointer; margin: 0;">Remember me</label>
                                 </div>
-                                <a href="#" class="forgot-password-link">Forgot password?</a>
+                                <a href="#" class="forgot-password-link" style="font-family: 'Barlow', sans-serif; font-size: 13px; color: #B8860B; text-decoration: none; transition: color 0.3s ease;">Forgot password?</a>
                             </div>
                             
-                            <button type="submit" class="btn-zenara-primary btn-lg btn-full-width">Sign In</button>
+                            <button type="submit" class="btn-zenara-primary btn-lg btn-full-width" style="width: 100%; padding: 16px 36px; background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%); color: white; border: none; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 6px 16px rgba(184, 134, 11, 0.4);">Sign In</button>
                             
-                            <div class="portal-divider">
-                                <span>or</span>
+                            <div class="portal-divider" style="position: relative; text-align: center; margin: 16px 0;">
+                                <span style="position: relative; background: white; padding: 0 16px; font-family: 'Barlow', sans-serif; font-size: 13px; color: #A0AEC0; z-index: 1;">or</span>
+                                <div style="position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #E0E3E7; transform: translateY(-50%); z-index: 0;"></div>
                             </div>
                             
-                            <div class="portal-help">
-                                <p>Don't have access yet?</p>
-                                <a href="zenara-contact.html" class="btn-zenara-secondary btn-lg btn-full-width">Contact Us for Access</a>
+                            <div class="portal-help" style="text-align: center;">
+                                <p style="font-family: 'Barlow', sans-serif; font-size: 14px; color: #4A5568; margin-bottom: 16px;">Don't have access yet?</p>
+                                <a href="zenara-contact.html" class="btn-zenara-secondary btn-lg btn-full-width" style="display: block; width: 100%; padding: 14px 32px; background: transparent; color: #B8860B; border: 2px solid #B8860B; text-align: center; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease;">Contact Us for Access</a>
                             </div>
                         </form>
                         
-                        <div class="portal-security">
-                            <div class="security-icon">
+                        <div class="portal-security" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 28px; padding-top: 28px; border-top: 1px solid #E0E3E7;">
+                            <div class="security-icon" style="width: 32px; height: 32px; background: linear-gradient(135deg, rgba(45, 122, 79, 0.15) 0%, rgba(59, 170, 106, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #2D7A4F;">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" fill="currentColor" opacity="0.3"/>
                                     <path d="M10 12L9 13L11 15L15 11L14 10L11 13L10 12Z" fill="currentColor"/>
                                 </svg>
                             </div>
-                            <p>Your data is protected with 256-bit SSL encryption</p>
+                            <p style="font-family: 'Barlow', sans-serif; font-size: 12px; color: #718096; margin: 0;">Your data is protected with 256-bit SSL encryption</p>
                         </div>
                     </div>
                     
                     <!-- Portal Features -->
-                    <div class="portal-features-card">
-                        <h2>Portal Features</h2>
-                        <p class="features-intro">
+                    <div class="portal-features-card" style="background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, rgba(218, 165, 32, 0.03) 100%); padding: 48px; border-radius: 16px; border: 2px solid rgba(184, 134, 11, 0.2);">
+                        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; color: white; margin-bottom: 16px;">Portal Features</h2>
+                        <p class="features-intro" style="font-family: 'Barlow', sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.85); line-height: 1.7; margin-bottom: 36px;">
                             Access comprehensive property management tools and real-time data from anywhere.
                         </p>
                         
-                        <div class="portal-features-list">
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                        <div class="portal-features-list" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="currentColor" opacity="0.3"/>
                                         <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Financial Statements</h4>
-                                    <p>View and download monthly statements and annual reports</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Financial Statements</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">View and download monthly statements and annual reports</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
                                         <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Maintenance Requests</h4>
-                                    <p>Submit and track property maintenance requests</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Maintenance Requests</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Submit and track property maintenance requests</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7 10L12 5L17 10M12 5V19" stroke="currentColor" stroke-width="2"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Property Documents</h4>
-                                    <p>Access leases, inspection reports, and certificates</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Property Documents</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Access leases, inspection reports, and certificates</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20 6H4C2.9 6 2 6.9 2 8V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6Z" fill="currentColor" opacity="0.3"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Payment Tracking</h4>
-                                    <p>Monitor rent payments and transaction history</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Payment Tracking</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Monitor rent payments and transaction history</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" fill="currentColor" opacity="0.3"/>
                                         <path d="M12 14C7.03 14 3 16.69 3 20V22H21V20C21 16.69 16.97 14 12 14Z" fill="currentColor"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Tenant Information</h4>
-                                    <p>View tenant details and lease information</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Tenant Information</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">View tenant details and lease information</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" opacity="0.3"/>
                                         <path d="M7 12H17M12 7V17" stroke="white" stroke-width="2"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Owner Requests</h4>
-                                    <p>Submit inquiries and requests to your property manager</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Owner Requests</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Submit inquiries and requests to your property manager</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <div class="feature-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #B8860B; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3 13L7 9L11 13L21 3" stroke="currentColor" stroke-width="2"/>
                                         <path d="M21 3V9H15" stroke="currentColor" stroke-width="2"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Portfolio Dashboard</h4>
-                                    <p>Real-time overview of all your managed properties</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">Portfolio Dashboard</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Real-time overview of all your managed properties</p>
                                 </div>
                             </div>
                             
-                            <div class="portal-feature-item">
-                                <div class="feature-icon eco-icon">
+                            <div class="portal-feature-item" style="display: flex; gap: 16px; align-items: start; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 10px; border: 1px solid rgba(45, 122, 79, 0.15);">
+                                <div class="feature-icon eco-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(45, 122, 79, 0.15) 0%, rgba(59, 170, 106, 0.1) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2D7A4F; flex-shrink: 0;">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
                                     </svg>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>SecureRent Status</h4>
-                                    <p>Track guaranteed payments and programme status</p>
+                                    <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 6px;">SecureRent Status</h4>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Track guaranteed payments and programme status</p>
                                 </div>
                             </div>
                         </div>
@@ -237,114 +516,147 @@
         </section>
         
         <!-- Coming Soon Notice -->
-        <section class="zenara-coming-soon">
-            <div class="container">
-                <div class="coming-soon-card">
-                    <div class="coming-soon-icon">
+        <section class="zenara-coming-soon" style="background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%); padding: 80px 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+                <div class="coming-soon-card" style="background: white; padding: 60px 48px; border-radius: 16px; text-align: center; border: 2px solid #E0E3E7; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); max-width: 900px; margin: 0 auto;">
+                    <div class="coming-soon-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(218, 165, 32, 0.08) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #B8860B; margin: 0 auto 28px auto;">
                         <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
                             <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h2>Full Portal Coming Soon</h2>
-                    <p>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 600; color: #1A1A1A; margin-bottom: 20px;">Full Portal Coming Soon</h2>
+                    <p style="font-family: 'Barlow', sans-serif; font-size: 16px; line-height: 1.7; color: #4A5568; margin-bottom: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">
                         We're building a comprehensive client portal with real-time data access, document management, 
                         and maintenance tracking. The full portal will launch in Q2 2026.
                     </p>
-                    <p>
+                    <p style="font-family: 'Barlow', sans-serif; font-size: 15px; line-height: 1.7; color: #718096; margin-bottom: 36px; max-width: 700px; margin-left: auto; margin-right: auto;">
                         Current ZENNARA clients receive detailed monthly reports via email. For immediate access to 
                         your property information, please contact your property manager.
                     </p>
-                    <div class="coming-soon-actions">
-                        <a href="zenara-contact.html" class="btn-zenara-primary btn-lg">Contact Your Manager</a>
-                        <a href="mailto:info@zennarafp.com" class="btn-zenara-secondary btn-lg">Email Us</a>
+                    <div class="coming-soon-actions" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="zenara-contact.html" class="btn-zenara-primary btn-lg" style="display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%); color: white; text-decoration: none; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 6px 16px rgba(184, 134, 11, 0.4);">Contact Your Manager</a>
+                        <a href="mailto:info@zennarafp.com" class="btn-zenara-secondary btn-lg" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 34px; background: transparent; color: #B8860B; border: 2px solid #B8860B; text-decoration: none; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s ease;">Email Us</a>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- Security & Privacy -->
-        <section class="zenara-security-info">
-            <div class="container">
-                <div class="security-grid">
-                    <div class="security-card">
-                        <div class="security-badge">
+        <section class="zenara-security-info" style="background: linear-gradient(135deg, #1A1A1A 0%, #2D3748 50%, #1A1A1A 100%); padding: 100px 0; position: relative; overflow: hidden;">
+            <!-- Decorative Elements -->
+            <div style="position: absolute; top: -150px; right: -150px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(184, 134, 11, 0.12) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -100px; left: -100px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(45, 122, 79, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div style="position: absolute; top: 50%; left: 50%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, transparent 60%); border-radius: 50%; transform: translate(-50%, -50%);"></div>
+            
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1;">
+                <div style="text-align: center; margin-bottom: 56px;">
+                    <div style="color: #B8860B; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 16px;">Security & Privacy</div>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; color: white; margin-bottom: 16px;">Your Data is <em style="font-style: italic; color: #DAA520;">Protected</em></h2>
+                    <p style="font-family: 'Barlow', sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.75); max-width: 650px; margin: 0 auto; line-height: 1.7;">Enterprise-grade security measures safeguard your property and financial information</p>
+                </div>
+                
+                <div class="security-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                    <div class="security-card" style="background: rgba(255, 255, 255, 0.98); padding: 44px 36px; border-radius: 16px; text-align: center; border: 2px solid rgba(218, 165, 32, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #B8860B 0%, #DAA520 100%);"></div>
+                        <div class="security-badge" style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #B8860B; margin: 0 auto 28px auto; box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" fill="currentColor"/>
                             </svg>
                         </div>
-                        <h3>256-bit SSL Encryption</h3>
-                        <p>All data transmission is protected with bank-grade encryption</p>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #1A1A1A; margin-bottom: 14px; line-height: 1.3;">256-Bit SSL Encryption</h3>
+                        <p style="font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0;">All data transmission is protected with bank-grade encryption technology</p>
                     </div>
                     
-                    <div class="security-card">
-                        <div class="security-badge">
+                    <div class="security-card" style="background: rgba(255, 255, 255, 0.98); padding: 44px 36px; border-radius: 16px; text-align: center; border: 2px solid rgba(218, 165, 32, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #B8860B 0%, #DAA520 100%);"></div>
+                        <div class="security-badge" style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #B8860B; margin: 0 auto 28px auto; box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15);">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="5" y="11" width="14" height="10" rx="2" fill="currentColor" opacity="0.3"/>
                                 <path d="M7 11V7C7 4.79086 8.79086 3 11 3H13C15.2091 3 17 4.79086 17 7V11" stroke="currentColor" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h3>Secure Access Control</h3>
-                        <p>Multi-factor authentication and role-based permissions</p>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #1A1A1A; margin-bottom: 14px; line-height: 1.3;">Secure Access Control</h3>
+                        <p style="font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0;">Multi-factor authentication and role-based permissions protect your account</p>
                     </div>
                     
-                    <div class="security-card">
-                        <div class="security-badge eco-badge">
+                    <div class="security-card" style="background: rgba(255, 255, 255, 0.98); padding: 44px 36px; border-radius: 16px; text-align: center; border: 2px solid rgba(59, 170, 106, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden; transition: all 0.3s ease;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #2D7A4F 0%, #3BAA6A 100%);"></div>
+                        <div class="security-badge eco-badge" style="width: 80px; height: 80px; background: linear-gradient(135deg, rgba(45, 122, 79, 0.15) 0%, rgba(59, 170, 106, 0.1) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #2D7A4F; margin: 0 auto 28px auto; box-shadow: 0 4px 12px rgba(45, 122, 79, 0.15);">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="currentColor"/>
                             </svg>
                         </div>
-                        <h3>Data Privacy</h3>
-                        <p>Full compliance with East African data protection regulations</p>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #1A1A1A; margin-bottom: 14px; line-height: 1.3;">Data Privacy</h3>
+                        <p style="font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0;">Full compliance with East African data protection regulations and standards</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- Help & Support -->
-        <section class="zenara-portal-help">
-            <div class="container">
-                <div class="help-card">
-                    <h2>Need Help?</h2>
-                    <p>Our support team is available to assist with portal access and technical questions.</p>
-                    <div class="help-contact-options">
-                        <div class="help-contact-item">
-                            <div class="help-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 8L10.89 13.26C11.54 13.67 12.46 13.67 13.11 13.26L21 8M5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19Z" stroke="currentColor" stroke-width="2"/>
-                                </svg>
+        <section class="zenara-portal-help" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); padding: 100px 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+                <div class="help-card" style="background: white; padding: 64px 56px; border-radius: 20px; border: 2px solid #E0E3E7; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden;">
+                    <!-- Decorative Background Pattern -->
+                    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(184, 134, 11, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: -60px; left: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(45, 122, 79, 0.04) 0%, transparent 70%); border-radius: 50%;"></div>
+                    
+                    <div style="position: relative; z-index: 1;">
+                        <div style="text-align: center; margin-bottom: 48px;">
+                            <div style="color: #B8860B; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 16px;">Support</div>
+                            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; color: #1A1A1A; margin-bottom: 16px;">Need <em style="font-style: italic; color: #8B6914;">Help?</em></h2>
+                            <p style="font-family: 'Barlow', sans-serif; font-size: 17px; line-height: 1.7; color: #4A5568; max-width: 680px; margin: 0 auto;">Our dedicated support team is ready to assist you with portal access, technical questions, and property management inquiries.</p>
+                        </div>
+                        
+                        <div class="help-contact-options" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 40px;">
+                            <div class="help-contact-item" style="display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 36px 28px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(218, 165, 32, 0.02) 100%); border-radius: 12px; border: 2px solid rgba(184, 134, 11, 0.15); transition: all 0.3s ease;">
+                                <div class="help-icon" style="width: 64px; height: 64px; background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 16px rgba(184, 134, 11, 0.3);">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L10.89 13.26C11.54 13.67 12.46 13.67 13.11 13.26L21 8M5 19H19C20.1 19 21 18.1 21 17V7C21 5.9 20.1 5 19 5H5C3.9 5 3 5.9 3 7V17C3 18.1 3.9 19 5 19Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div style="text-align: center;">
+                                    <strong style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; display: block; margin-bottom: 10px;">Email Support</strong>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 15px; margin: 0;"><a href="mailto:info@zennarafp.com" style="color: #B8860B; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">info@zennarafp.com</a></p>
+                                </div>
                             </div>
-                            <div>
-                                <strong>Email Support</strong>
-                                <p><a href="mailto:info@zennarafp.com">info@zennarafp.com</a></p>
+                            
+                            <div class="help-contact-item" style="display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 36px 28px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(218, 165, 32, 0.02) 100%); border-radius: 12px; border: 2px solid rgba(184, 134, 11, 0.15); transition: all 0.3s ease;">
+                                <div class="help-icon" style="width: 64px; height: 64px; background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 16px rgba(184, 134, 11, 0.3);">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div style="text-align: center;">
+                                    <strong style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; display: block; margin-bottom: 10px;">Phone Support</strong>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 15px; margin: 0;"><a href="tel:+254789115737" style="color: #B8860B; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">+254 789 115737</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="help-contact-item" style="display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 36px 28px; background: linear-gradient(135deg, rgba(37, 211, 102, 0.06) 0%, rgba(32, 189, 92, 0.03) 100%); border-radius: 12px; border: 2px solid rgba(37, 211, 102, 0.25); transition: all 0.3s ease;">
+                                <div class="help-icon" style="width: 64px; height: 64px; background: linear-gradient(135deg, #25D366 0%, #20BD5C 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                                    </svg>
+                                </div>
+                                <div style="text-align: center;">
+                                    <strong style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; display: block; margin-bottom: 10px;">WhatsApp</strong>
+                                    <p style="font-family: 'Barlow', sans-serif; font-size: 15px; margin: 0;"><a href="https://wa.me/254789115737" target="_blank" style="color: #128C7E; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">+254 789 115737</a></p>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="help-contact-item">
-                            <div class="help-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" stroke="currentColor" stroke-width="2"/>
+                        <div style="text-align: center; padding-top: 32px; border-top: 2px solid #F5F6F7;">
+                            <div style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(218, 165, 32, 0.05) 100%); padding: 14px 28px; border-radius: 50px; border: 1px solid rgba(184, 134, 11, 0.15);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #B8860B;">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
                                 </svg>
-                            </div>
-                            <div>
-                                <strong>Phone Support</strong>
-                                <p><a href="tel:+254789115737">+254 789 115737</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="help-contact-item">
-                            <div class="help-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>WhatsApp</strong>
-                                <p><a href="https://wa.me/254789115737" target="_blank">+254 789 115737</a></p>
+                                <p class="help-hours" style="font-family: 'Barlow', sans-serif; font-size: 14px; color: #4A5568; margin: 0; font-weight: 500;">Support available Monday - Friday, 8:00 AM - 6:00 PM EAT</p>
                             </div>
                         </div>
                     </div>
-                    <p class="help-hours">Support available Monday - Friday, 8:00 AM - 6:00 PM EAT</p>
                 </div>
             </div>
         </section>
@@ -433,6 +745,67 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/zenara-custom.js"></script>
+    
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            // Toggle mobile menu
+            if (navToggle) {
+                navToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // Handle dropdown clicks in mobile menu
+            const dropdownLinks = document.querySelectorAll('.nav-dropdown > a');
+            dropdownLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        const dropdownMenu = this.nextElementSibling;
+                        if (dropdownMenu && dropdownMenu.classList.contains('dropdown-menu')) {
+                            dropdownMenu.classList.toggle('show');
+                        }
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu && navMenu.classList.contains('active')) {
+                    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        
+                        // Close all dropdowns
+                        const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                        openDropdowns.forEach(function(dropdown) {
+                            dropdown.classList.remove('show');
+                        });
+                    }
+                }
+            });
+            
+            // Close menu when window is resized to desktop
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    
+                    // Close all dropdowns
+                    const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    openDropdowns.forEach(function(dropdown) {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>

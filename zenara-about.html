@@ -14,6 +14,238 @@
     <link href="assets/css/styles.css" rel="stylesheet">
     <link href="assets/css/zenara-custom.css" rel="stylesheet">
     
+    <!-- Responsive Inline Styles -->
+    <style>
+        @media (max-width: 1024px) {
+            /* Adjust container padding */
+            .container {
+                padding: 0 24px !important;
+            }
+            
+            /* Navbar adjustments */
+            .nav-menu {
+                gap: 20px;
+                font-size: 14px;
+            }
+            
+            .nav-cta .btn-zenara-primary {
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+            
+            /* Company Profile - reduce gap */
+            .profile-grid {
+                gap: 40px !important;
+            }
+            
+            .profile-stat-card {
+                padding: 20px 16px !important;
+            }
+            
+            .stat-number {
+                font-size: 36px !important;
+            }
+            
+            .stat-label {
+                font-size: 10px !important;
+            }
+            
+            /* Mission & Vision - reduce padding */
+            .mv-card {
+                padding: 32px 24px !important;
+            }
+            
+            .mv-card h3 {
+                font-size: 24px !important;
+            }
+            
+            /* Core Values - 2 columns */
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+            
+            /* Coverage cards - smaller */
+            .coverage-detail-card {
+                padding: 32px 28px !important;
+            }
+            
+            .coverage-flag-large {
+                font-size: 48px !important;
+            }
+            
+            /* Why Choose - reduce padding */
+            .why-card {
+                padding: 32px 28px !important;
+            }
+            
+            /* Reduce section title sizes */
+            .section-title {
+                font-size: 34px !important;
+            }
+            
+            .hero-title {
+                font-size: 40px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Navbar Responsive */
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 0;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid #E0E3E7;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                margin: 0;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                display: flex !important;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+                border-bottom: 1px solid #E0E3E7;
+            }
+            
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-menu a {
+                padding: 16px 8px;
+                justify-content: space-between;
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: flex !important;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 8px;
+                background: transparent;
+                border: none;
+                z-index: 1001;
+                margin-left: auto;
+            }
+            
+            .nav-toggle span {
+                width: 24px;
+                height: 2.5px;
+                background-color: #B8860B;
+                transition: all 0.3s ease;
+                border-radius: 2px;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(7px, 7px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .nav-cta {
+                display: none !important;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #E0E3E7;
+                border-radius: 0;
+                padding: 0;
+                margin-top: 0;
+                background: #F8F9FA;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+            
+            .nav-dropdown:hover .dropdown-menu {
+                display: none;
+            }
+            
+            .dropdown-menu.show {
+                display: block !important;
+            }
+            
+            .dropdown-menu a {
+                padding: 12px 16px;
+            }
+            
+            /* Company Profile - Stack on mobile */
+            .profile-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+            
+            /* Mission & Vision - Stack on mobile */
+            .mv-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+            
+            /* Core Values - 1 column on mobile */
+            .values-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+            
+            /* Coverage - 1 column on mobile */
+            .coverage-detail-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+            
+            /* Why Choose - 1 column on mobile */
+            .why-choose-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+            
+            /* Adjust section paddings on mobile */
+            section { padding: 50px 0 !important; }
+            
+            /* Smaller headings on mobile */
+            .section-title { font-size: 28px !important; }
+            .hero-title { font-size: 32px !important; }
+        }
+        
+        @media (max-width: 992px) and (min-width: 769px) {
+            /* Tablet - 2 columns for values */
+            .values-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            
+            /* Show nav toggle on tablet */
+            .nav-toggle {
+                display: flex !important;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex !important;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                z-index: 999;
+            }
+            
+            .nav-cta {
+                display: none !important;
+            }
+        }
+    </style>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="logos/ZENNARA_ZPrism_Icon.svg">
 </head>
@@ -89,46 +321,48 @@
         </section>
         
         <!-- Company Profile -->
-        <section class="zenara-company-profile">
-            <div class="container">
-                <div class="profile-grid">
+        <section class="zenara-company-profile" style="background: #FFFFFF; padding: 80px 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+                <div class="profile-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
                     <div class="profile-content">
-                        <div class="section-label">Who We Are</div>
-                        <h2 class="section-title">Institutional <em class="text-gold">Property Management</em></h2>
-                        <p>
-                            ZENNARA operates as a professional property and facility management firm focused 
-                            exclusively on managing assets—not selling them. This singular focus eliminates 
-                            conflicts of interest and ensures our clients' properties receive the dedicated 
-                            attention they deserve.
-                        </p>
-                        <p>
-                            Our approach is disciplined, data-driven, and transparent. We provide monthly 
-                            financial statements, maintain rigorous preventive maintenance schedules, and 
-                            offer guaranteed rental income through our SecureRent Programme.
-                        </p>
-                        <p>
-                            Operating across four East African nations, ZENNARA serves residential and 
-                            commercial property owners who value professional management, reliable cash flow, 
-                            and peace of mind.
-                        </p>
+                        <div class="section-label" style="color: #B8860B; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 16px;">Who We Are</div>
+                        <h2 class="section-title" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; color: #1A1A1A; line-height: 1.2; margin-bottom: 24px;">Institutional <em class="text-gold" style="font-style: italic; color: #8B6914;">Property Management</em></h2>
+                        <div style="font-size: 15px; line-height: 1.8; color: #4A5568;">
+                            <p style="margin-bottom: 18px;">
+                                ZENNARA operates as a professional property and facility management firm focused 
+                                exclusively on managing assets—not selling them. This singular focus eliminates 
+                                conflicts of interest and ensures our clients' properties receive the dedicated 
+                                attention they deserve.
+                            </p>
+                            <p style="margin-bottom: 18px;">
+                                Our approach is disciplined, data-driven, and transparent. We provide monthly 
+                                financial statements, maintain rigorous preventive maintenance schedules, and 
+                                offer guaranteed rental income through our SecureRent Programme.
+                            </p>
+                            <p style="margin-bottom: 0;">
+                                Operating across four East African nations, ZENNARA serves residential and 
+                                commercial property owners who value professional management, reliable cash flow, 
+                                and peace of mind.
+                            </p>
+                        </div>
                     </div>
                     
-                    <div class="profile-stats">
-                        <div class="profile-stat-card">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Properties Under Management</div>
+                    <div class="profile-stats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="profile-stat-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FFFEF5 100%); border: 2px solid #DAA520; padding: 28px 20px; text-align: center; border-radius: 10px;">
+                            <div class="stat-number" style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: #8B6914; margin-bottom: 6px; line-height: 1;">500+</div>
+                            <div class="stat-label" style="font-size: 11px; color: #4A5568; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.4;">Properties Under Management</div>
                         </div>
-                        <div class="profile-stat-card">
-                            <div class="stat-number">4</div>
-                            <div class="stat-label">East African Countries</div>
+                        <div class="profile-stat-card" style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 100%); border: 2px solid #3BAA6A; padding: 28px 20px; text-align: center; border-radius: 10px;">
+                            <div class="stat-number" style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: #2D7A4F; margin-bottom: 6px; line-height: 1;">4</div>
+                            <div class="stat-label" style="font-size: 11px; color: #4A5568; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.4;">East African Countries</div>
                         </div>
-                        <div class="profile-stat-card">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Client Retention Rate</div>
+                        <div class="profile-stat-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FFFEF5 100%); border: 2px solid #DAA520; padding: 28px 20px; text-align: center; border-radius: 10px;">
+                            <div class="stat-number" style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: #8B6914; margin-bottom: 6px; line-height: 1;">98%</div>
+                            <div class="stat-label" style="font-size: 11px; color: #4A5568; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.4;">Client Retention Rate</div>
                         </div>
-                        <div class="profile-stat-card eco-card">
-                            <div class="stat-number">15th</div>
-                            <div class="stat-label">Guaranteed Payment Date</div>
+                        <div class="profile-stat-card eco-card" style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 100%); border: 2px solid #3BAA6A; padding: 28px 20px; text-align: center; border-radius: 10px;">
+                            <div class="stat-number" style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: #2D7A4F; margin-bottom: 6px; line-height: 1;">15th</div>
+                            <div class="stat-label" style="font-size: 11px; color: #4A5568; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.4;">Guaranteed Payment Date</div>
                         </div>
                     </div>
                 </div>
@@ -136,32 +370,34 @@
         </section>
         
         <!-- Mission & Vision -->
-        <section class="zenara-mission-vision" style="background: var(--zenara-light-grey);">
-            <div class="container">
-                <div class="mv-grid">
-                    <div class="mv-card">
-                        <div class="mv-icon">
-                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <section class="zenara-mission-vision" style="background: linear-gradient(135deg, #F5F6F7 0%, #FFFFFF 50%, #F8F9FA 100%); padding: 80px 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+                <div class="mv-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto;">
+                    <div class="mv-card" style="background: white; border: 2px solid #DAA520; border-radius: 12px; padding: 40px 32px; box-shadow: 0 6px 20px rgba(184, 134, 11, 0.1); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(184, 134, 11, 0.06) 0%, transparent 70%); border-radius: 50%;"></div>
+                        <div class="mv-icon" style="color: #B8860B; margin-bottom: 20px; font-size: 44px; position: relative; z-index: 1;">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="currentColor"/>
                             </svg>
                         </div>
-                        <h3>Our Mission</h3>
-                        <p>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Our Mission</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; position: relative; z-index: 1; margin: 0;">
                             To provide property owners across East Africa with professional, transparent, and 
                             reliable management services that maximize asset value, ensure consistent income, 
                             and deliver operational excellence.
                         </p>
                     </div>
                     
-                    <div class="mv-card">
-                        <div class="mv-icon">
-                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="mv-card" style="background: white; border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 32px; box-shadow: 0 6px 20px rgba(45, 122, 79, 0.1); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(45, 122, 79, 0.06) 0%, transparent 70%); border-radius: 50%;"></div>
+                        <div class="mv-icon" style="color: #2D7A4F; margin-bottom: 20px; font-size: 44px; position: relative; z-index: 1;">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3>Our Vision</h3>
-                        <p>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Our Vision</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; position: relative; z-index: 1; margin: 0;">
                             To be East Africa's most trusted property and facility management firm, recognized 
                             for institutional discipline, guaranteed income programs, and sustainable operations 
                             that benefit property owners, tenants, and communities.
@@ -172,136 +408,136 @@
         </section>
         
         <!-- Core Values -->
-        <section class="zenara-values">
-            <div class="container">
-                <div class="section-header text-center">
-                    <div class="section-label">Core Values</div>
-                    <h2 class="section-title">What <em class="text-gold">Drives Us</em></h2>
+        <section class="zenara-values" style="background: #FFFFFF; padding: 80px 0;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+                <div class="section-header text-center" style="text-align: center; margin-bottom: 50px;">
+                    <div class="section-label" style="color: #B8860B; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 14px;">Core Values</div>
+                    <h2 class="section-title" style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 400; color: #1A1A1A; line-height: 1.2;">What <em class="text-gold" style="font-style: italic; color: #8B6914;">Drives Us</em></h2>
                 </div>
                 
-                <div class="values-grid">
-                    <div class="value-card">
-                        <h3>Professional Discipline</h3>
-                        <p>We maintain rigorous standards in reporting, maintenance scheduling, tenant screening, and financial administration.</p>
+                <div class="values-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    <div class="value-card" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); border: 1px solid #E0E3E7; border-left: 3px solid #B8860B; padding: 30px 24px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 12px;">Professional Discipline</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">We maintain rigorous standards in reporting, maintenance scheduling, tenant screening, and financial administration.</p>
                     </div>
                     
-                    <div class="value-card">
-                        <h3>Transparency</h3>
-                        <p>Every transaction, expense, and decision is documented and reported. Our clients always know exactly where their money goes.</p>
+                    <div class="value-card" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); border: 1px solid #E0E3E7; border-left: 3px solid #2D7A4F; padding: 30px 24px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 12px;">Transparency</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Every transaction, expense, and decision is documented and reported. Our clients always know exactly where their money goes.</p>
                     </div>
                     
-                    <div class="value-card">
-                        <h3>Reliability</h3>
-                        <p>From guaranteed rent payments to scheduled maintenance, we deliver on our commitments consistently and predictably.</p>
+                    <div class="value-card" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); border: 1px solid #E0E3E7; border-left: 3px solid #B8860B; padding: 30px 24px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 12px;">Reliability</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">From guaranteed rent payments to scheduled maintenance, we deliver on our commitments consistently and predictably.</p>
                     </div>
                     
-                    <div class="value-card">
-                        <h3>Sustainability</h3>
-                        <p>We integrate environmental responsibility into operations, reducing costs while minimizing ecological impact.</p>
+                    <div class="value-card" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); border: 1px solid #E0E3E7; border-left: 3px solid #2D7A4F; padding: 30px 24px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 12px;">Sustainability</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">We integrate environmental responsibility into operations, reducing costs while minimizing ecological impact.</p>
                     </div>
                     
-                    <div class="value-card">
-                        <h3>Client-Focused</h3>
-                        <p>Your property's performance is our priority. We align our success with yours through performance-based fee structures.</p>
+                    <div class="value-card" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); border: 1px solid #E0E3E7; border-left: 3px solid #B8860B; padding: 30px 24px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 12px;">Client-Focused</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Your property's performance is our priority. We align our success with yours through performance-based fee structures.</p>
                     </div>
                     
-                    <div class="value-card">
-                        <h3>Regional Expertise</h3>
-                        <p>Deep knowledge of East African property markets, tenancy laws, and local operating conditions across all four countries.</p>
+                    <div class="value-card" style="background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%); border: 1px solid #E0E3E7; border-left: 3px solid #2D7A4F; padding: 30px 24px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 12px;">Regional Expertise</h3>
+                        <p style="font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0;">Deep knowledge of East African property markets, tenancy laws, and local operating conditions across all four countries.</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- East Africa Coverage -->
-        <section class="zenara-coverage-detail">
+        <section class="zenara-coverage-detail" style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 100%); padding: 100px 0;">
             <div class="container">
-                <div class="section-header text-center">
-                    <div class="section-label eco">Regional Presence</div>
-                    <h2 class="section-title">Operating Across <em class="text-eco">East Africa</em></h2>
-                    <p class="section-subtitle">
+                <div class="section-header text-center" style="text-align: center; margin-bottom: 64px;">
+                    <div class="section-label eco" style="color: #2D7A4F; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 16px;">Regional Presence</div>
+                    <h2 class="section-title" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 400; color: #1A1A1A; line-height: 1.2; margin-bottom: 20px;">Operating Across <em class="text-eco" style="font-style: italic; color: #2D7A4F;">East Africa</em></h2>
+                    <p class="section-subtitle" style="font-size: 15px; color: #4A5568; max-width: 680px; margin: 0 auto; line-height: 1.7;">
                         ZENNARA maintains active operations in four East African nations, with local teams 
                         who understand regional markets, regulations, and cultural nuances.
                     </p>
                 </div>
                 
-                <div class="coverage-detail-grid">
-                    <div class="coverage-detail-card">
-                        <div class="coverage-flag-large">🇰🇪</div>
-                        <h3>Kenya</h3>
-                        <p class="coverage-cities-detail">Nairobi · Mombasa · Kisumu</p>
-                        <p class="coverage-description">
+                <div class="coverage-detail-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto;">
+                    <div class="coverage-detail-card" style="background: white; border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; box-shadow: 0 4px 16px rgba(45, 122, 79, 0.1); transition: all 0.3s ease;">
+                        <div class="coverage-flag-large" style="font-size: 56px; margin-bottom: 20px; text-align: center;">🇰🇪</div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #1A1A1A; text-align: center; margin-bottom: 8px;">Kenya</h3>
+                        <p class="coverage-cities-detail" style="font-size: 13px; color: #718096; text-align: center; margin-bottom: 20px; letter-spacing: 0.05em;">Nairobi · Mombasa · Kisumu</p>
+                        <p class="coverage-description" style="font-size: 14px; line-height: 1.7; color: #4A5568; margin-bottom: 24px; text-align: center;">
                             Our headquarters and largest portfolio. Comprehensive residential and commercial 
                             management across Kenya's major urban centers.
                         </p>
-                        <div class="coverage-metrics">
+                        <div class="coverage-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #E0E3E7; padding-top: 24px;">
                             <div class="coverage-metric">
-                                <span class="metric-label">Properties:</span>
-                                <span class="metric-value">250+</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Properties:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">250+</span>
                             </div>
                             <div class="coverage-metric">
-                                <span class="metric-label">Established:</span>
-                                <span class="metric-value">2020</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Established:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">2020</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="coverage-detail-card">
-                        <div class="coverage-flag-large">🇺🇬</div>
-                        <h3>Uganda</h3>
-                        <p class="coverage-cities-detail">Kampala · Entebbe</p>
-                        <p class="coverage-description">
+                    <div class="coverage-detail-card" style="background: white; border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; box-shadow: 0 4px 16px rgba(45, 122, 79, 0.1); transition: all 0.3s ease;">
+                        <div class="coverage-flag-large" style="font-size: 56px; margin-bottom: 20px; text-align: center;">🇺🇬</div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #1A1A1A; text-align: center; margin-bottom: 8px;">Uganda</h3>
+                        <p class="coverage-cities-detail" style="font-size: 13px; color: #718096; text-align: center; margin-bottom: 20px; letter-spacing: 0.05em;">Kampala · Entebbe</p>
+                        <p class="coverage-description" style="font-size: 14px; line-height: 1.7; color: #4A5568; margin-bottom: 24px; text-align: center;">
                             Growing portfolio of commercial and residential properties in Uganda's capital 
                             and surrounding areas. Strong focus on expat housing and corporate facilities.
                         </p>
-                        <div class="coverage-metrics">
+                        <div class="coverage-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #E0E3E7; padding-top: 24px;">
                             <div class="coverage-metric">
-                                <span class="metric-label">Properties:</span>
-                                <span class="metric-value">120+</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Properties:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">120+</span>
                             </div>
                             <div class="coverage-metric">
-                                <span class="metric-label">Established:</span>
-                                <span class="metric-value">2021</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Established:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">2021</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="coverage-detail-card">
-                        <div class="coverage-flag-large">🇹🇿</div>
-                        <h3>Tanzania</h3>
-                        <p class="coverage-cities-detail">Dar es Salaam · Arusha</p>
-                        <p class="coverage-description">
+                    <div class="coverage-detail-card" style="background: white; border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; box-shadow: 0 4px 16px rgba(45, 122, 79, 0.1); transition: all 0.3s ease;">
+                        <div class="coverage-flag-large" style="font-size: 56px; margin-bottom: 20px; text-align: center;">🇹🇿</div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #1A1A1A; text-align: center; margin-bottom: 8px;">Tanzania</h3>
+                        <p class="coverage-cities-detail" style="font-size: 13px; color: #718096; text-align: center; margin-bottom: 20px; letter-spacing: 0.05em;">Dar es Salaam · Arusha</p>
+                        <p class="coverage-description" style="font-size: 14px; line-height: 1.7; color: #4A5568; margin-bottom: 24px; text-align: center;">
                             Commercial office management and residential communities in Tanzania's economic 
                             hub and northern tourist gateway.
                         </p>
-                        <div class="coverage-metrics">
+                        <div class="coverage-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #E0E3E7; padding-top: 24px;">
                             <div class="coverage-metric">
-                                <span class="metric-label">Properties:</span>
-                                <span class="metric-value">80+</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Properties:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">80+</span>
                             </div>
                             <div class="coverage-metric">
-                                <span class="metric-label">Established:</span>
-                                <span class="metric-value">2022</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Established:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">2022</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="coverage-detail-card">
-                        <div class="coverage-flag-large">🇷🇼</div>
-                        <h3>Rwanda</h3>
-                        <p class="coverage-cities-detail">Kigali</p>
-                        <p class="coverage-description">
+                    <div class="coverage-detail-card" style="background: white; border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; box-shadow: 0 4px 16px rgba(45, 122, 79, 0.1); transition: all 0.3s ease;">
+                        <div class="coverage-flag-large" style="font-size: 56px; margin-bottom: 20px; text-align: center;">🇷🇼</div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: #1A1A1A; text-align: center; margin-bottom: 8px;">Rwanda</h3>
+                        <p class="coverage-cities-detail" style="font-size: 13px; color: #718096; text-align: center; margin-bottom: 20px; letter-spacing: 0.05em;">Kigali</p>
+                        <p class="coverage-description" style="font-size: 14px; line-height: 1.7; color: #4A5568; margin-bottom: 24px; text-align: center;">
                             Premium residential and commercial management in Rwanda's capital. Focus on 
                             modern developments and international standard facilities.
                         </p>
-                        <div class="coverage-metrics">
+                        <div class="coverage-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #E0E3E7; padding-top: 24px;">
                             <div class="coverage-metric">
-                                <span class="metric-label">Properties:</span>
-                                <span class="metric-value">50+</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Properties:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">50+</span>
                             </div>
                             <div class="coverage-metric">
-                                <span class="metric-label">Established:</span>
-                                <span class="metric-value">2023</span>
+                                <span class="metric-label" style="display: block; font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Established:</span>
+                                <span class="metric-value" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2D7A4F;">2023</span>
                             </div>
                         </div>
                     </div>
@@ -310,64 +546,64 @@
         </section>
         
         <!-- Why ZENNARA -->
-        <section class="zenara-why-choose">
+        <section class="zenara-why-choose" style="background: #FFFFFF; padding: 100px 0;">
             <div class="container">
-                <div class="section-header text-center">
-                    <div class="section-label">Why Choose ZENNARA</div>
-                    <h2 class="section-title">The <em class="text-gold">ZENNARA Difference</em></h2>
+                <div class="section-header text-center" style="text-align: center; margin-bottom: 64px;">
+                    <div class="section-label" style="color: #B8860B; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 16px;">Why Choose ZENNARA</div>
+                    <h2 class="section-title" style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 400; color: #1A1A1A; line-height: 1.2;">The <em class="text-gold" style="font-style: italic; color: #8B6914;">ZENNARA Difference</em></h2>
                 </div>
                 
-                <div class="why-choose-grid">
-                    <div class="why-card">
-                        <div class="why-number">01</div>
-                        <h3>Management Only, No Conflicts</h3>
-                        <p>
+                <div class="why-choose-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;">
+                    <div class="why-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FFFEF5 100%); border: 2px solid #DAA520; border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(184, 134, 11, 0.08); transition: all 0.3s ease;">
+                        <div class="why-number" style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(184, 134, 11, 0.15); line-height: 1;">01</div>
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Management Only, No Conflicts</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0; position: relative; z-index: 1;">
                             Unlike firms that handle both property sales and management, ZENNARA focuses 
                             exclusively on managing assets. We have no incentive to sell your property—only 
                             to maximize its performance.
                         </p>
                     </div>
                     
-                    <div class="why-card">
-                        <div class="why-number">02</div>
-                        <h3>SecureRent Guarantee</h3>
-                        <p>
+                    <div class="why-card" style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 100%); border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(45, 122, 79, 0.08); transition: all 0.3s ease;">
+                        <div class="why-number" style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(45, 122, 79, 0.15); line-height: 1;">02</div>
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">SecureRent Guarantee</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0; position: relative; z-index: 1;">
                             Our flagship SecureRent Programme guarantees landlord payment by the 15th of every 
                             month, regardless of tenant payment status. Financial certainty for property owners.
                         </p>
                     </div>
                     
-                    <div class="why-card">
-                        <div class="why-number">03</div>
-                        <h3>Disciplined Reporting</h3>
-                        <p>
+                    <div class="why-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FFFEF5 100%); border: 2px solid #DAA520; border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(184, 134, 11, 0.08); transition: all 0.3s ease;">
+                        <div class="why-number" style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(184, 134, 11, 0.15); line-height: 1;">03</div>
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Disciplined Reporting</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0; position: relative; z-index: 1;">
                             Monthly financial statements delivered by the 5th of each month. Annual accounts, 
                             real-time portal access, and transparent documentation of every transaction.
                         </p>
                     </div>
                     
-                    <div class="why-card">
-                        <div class="why-number">04</div>
-                        <h3>Preventive Maintenance</h3>
-                        <p>
+                    <div class="why-card" style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 100%); border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(45, 122, 79, 0.08); transition: all 0.3s ease;">
+                        <div class="why-number" style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(45, 122, 79, 0.15); line-height: 1;">04</div>
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Preventive Maintenance</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0; position: relative; z-index: 1;">
                             Scheduled inspections and servicing minimize emergency repairs, extend asset life, 
                             and protect property value. Data shows 70% reduction in emergency costs.
                         </p>
                     </div>
                     
-                    <div class="why-card">
-                        <div class="why-number">05</div>
-                        <h3>Regional Expertise</h3>
-                        <p>
+                    <div class="why-card" style="background: linear-gradient(135deg, #FFF8E7 0%, #FFFEF5 100%); border: 2px solid #DAA520; border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(184, 134, 11, 0.08); transition: all 0.3s ease;">
+                        <div class="why-number" style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(184, 134, 11, 0.15); line-height: 1;">05</div>
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Regional Expertise</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0; position: relative; z-index: 1;">
                             Deep knowledge of East African markets, tenancy laws, and local operating conditions. 
                             We understand the regulatory landscape across all four countries.
                         </p>
                     </div>
                     
-                    <div class="why-card">
-                        <div class="why-number">06</div>
-                        <h3>Institutional Approach</h3>
-                        <p>
+                    <div class="why-card" style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 100%); border: 2px solid #3BAA6A; border-radius: 12px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(45, 122, 79, 0.08); transition: all 0.3s ease;">
+                        <div class="why-number" style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; color: rgba(45, 122, 79, 0.15); line-height: 1;">06</div>
+                        <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1A1A1A; margin-bottom: 16px; position: relative; z-index: 1;">Institutional Approach</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: #4A5568; margin: 0; position: relative; z-index: 1;">
                             Professional systems, documented processes, and institutional discipline. Your property 
                             is managed by an organization, not dependent on individual personalities.
                         </p>
@@ -477,6 +713,44 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/zenara-custom.js"></script>
+    
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            const dropdownLinks = document.querySelectorAll('.nav-dropdown > a');
+            
+            // Toggle mobile menu
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // Handle dropdown clicks on mobile
+            dropdownLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        const dropdown = this.nextElementSibling;
+                        if (dropdown && dropdown.classList.contains('dropdown-menu')) {
+                            dropdown.classList.toggle('show');
+                        }
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>
